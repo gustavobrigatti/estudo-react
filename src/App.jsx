@@ -12,6 +12,7 @@ import TaskDetails from "./components/TaskDetails";
 
 const App = () => {
   const [tasks, setTasks] = useState([
+    //Criação de task manualmente
     {
       id: '1',
       title: 'Estudar programação',
@@ -25,8 +26,14 @@ const App = () => {
   ]);
 
   useEffect(() => {
+    const fetchTasks = async () => {
+      const { data } = await axios.get('https://jsonplaceholder.cypress.io/todos?_limit=10');
 
-  }, [tasks]);
+      setTasks(data);
+    }
+
+    fetchTasks();
+  }, []);
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map( task => {
