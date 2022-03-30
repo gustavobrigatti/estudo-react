@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Tasks from "./components/tasks";
+import Tasks from "./components/Tasks";
 import "./App.css";
 
 const App = () => {
@@ -19,7 +19,7 @@ const [tasks, setTasks] = useState([
   return(
     <>
       <div className="container">
-        <Tasks />
+        <Tasks tasks={tasks}/>
       </div>
     </>
   );
