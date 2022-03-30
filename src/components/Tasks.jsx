@@ -5,7 +5,14 @@ import Task from "./Task"
 const Tasks = ({ tasks, handleTaskClick, handleTasDeletion }) =>{
     return (
         <>
-            {tasks.map((task) => (<Task task={task} handleTaskClick={handleTaskClick} handleTasDeletion={handleTasDeletion} />))}
+            {tasks.map((task) => (
+                <Task
+                    key={task.id} 
+                    task={task} 
+                    handleTaskClick={handleTaskClick} 
+                    handleTasDeletion={handleTasDeletion} 
+                />
+            ))}
         </>
     );
 };
